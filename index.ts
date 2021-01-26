@@ -1,4 +1,5 @@
 import app from './app';
+import path from 'path';
 
 const startServer = () => {
   app.listen(3000, () => {

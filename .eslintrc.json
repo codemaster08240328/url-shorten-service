@@ -14,7 +14,8 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "import/extensions": ["error", "never"]
+    "import/extensions": ["error", "never"],
+    "operator-linebreak": ["error", "after"]
   },
   "settings": {
     "import/resolver": {
