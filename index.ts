@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import path from 'path';
 import bodyParser from 'body-parser';
 import betterLogging from 'better-logging';
 import initRoutes from './routes';
@@ -6,6 +7,7 @@ import initRoutes from './routes';
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
 
 initRoutes(app);
 
