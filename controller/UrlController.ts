@@ -17,7 +17,7 @@ export function postUrl(req: Request, res: Response, next: NextFunction) {
     const { error, value } = urlValidationSchema.validate({ url: req.body.url });
 
     if (error) {
-      res.status(400).send('Invalid Url');
+      res.status(400).send(JSON.stringify({ msg: 'Invalid Url' }));
     }
 
     console.info('Get POST Request with', value.url);
@@ -48,7 +48,7 @@ export function redirectToUrl(req: Request, res: Response, next: NextFunction) {
     const fullUrl = urlModel.get(shortUrl);
 
     if (!fullUrl) {
-      res.status(404).send(JSON.stringify({ msg: 'Wrong Url!' }));
+      res.status(404).send(JSON.stringify({ msg: 'Wrong Url' }));
     } else {
       console.info('Server is permanently redirecting to ', fullUrl);
       res.redirect(302, fullUrl);
