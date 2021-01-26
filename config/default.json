@@ -1,0 +1,6 @@
+{
+  "hashids": {
+    "salt": "bionic",
+    "length": 6
+  }
+}
